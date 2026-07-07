@@ -1,0 +1,84 @@
+{
+  "name": "modal-status-pill",
+  "version": "0.1.0",
+  "description": "Headless Modal GPU pool status for Next.js — cold, warming, and warm state from autoscaler stats",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./server": {
+      "types": "./dist/server.d.ts",
+      "import": "./dist/server.js",
+      "require": "./dist/server.cjs"
+    },
+    "./react": {
+      "types": "./dist/react.d.ts",
+      "import": "./dist/react.js",
+      "require": "./dist/react.cjs"
+    },
+    "./next": {
+      "types": "./dist/next.d.ts",
+      "import": "./dist/next.js",
+      "require": "./dist/next.cjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "type-check": "tsc --noEmit",
+    "prepublishOnly": "pnpm run build",
+    "prepare": "husky"
+  },
+  "keywords": [
+    "modal",
+    "modal-labs",
+    "gpu",
+    "serverless",
+    "nextjs",
+    "react",
+    "status",
+    "cold-start",
+    "autoscaler"
+  ],
+  "author": "jkvc",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jkvc/modal-status-pill"
+  },
+  "peerDependencies": {
+    "modal": ">=0.8.0",
+    "next": ">=14",
+    "react": ">=18"
+  },
+  "peerDependenciesMeta": {
+    "next": {
+      "optional": true
+    },
+    "react": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@types/node": "25.6.2",
+    "@types/react": "^19.2.14",
+    "husky": "^9.1.7",
+    "modal": "^0.8.2",
+    "next": "16.1.6",
+    "react": "19.2.3",
+    "tsup": "8.5.1",
+    "typescript": "5.8.3",
+    "vitest": "4.1.5"
+  },
+  "packageManager": "pnpm@10.28.0"
+}
